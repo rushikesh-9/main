@@ -1,0 +1,267 @@
+/* Global Reset: Remove default padding and margins, set box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.4;
+    background: url('bus.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    animation: backgroundAnimate 30s infinite alternate; /* Add background animation */
+}
+
+/* Keyframe for background animation */
+@keyframes backgroundAnimate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(30, 42, 56, 0.8); /* Dark semi-transparent background */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    transform: translateY(-20px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c2c2c2;
+    transform: scale(1.1);
+}
+
+/* Main Heading */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: slideInFromTop 1s ease-out;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards, slideInFromTop 1s ease-out forwards;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Main Section */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: rgba(74, 113, 130, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: zoomIn 1.2s ease-out;
+    transform: translateY(-20px);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Button Styles */
+a,
+form input[type="submit"] {
+    background-color: #1e2a38;
+    color: rgb(211, 182, 182);
+    padding: 6px 15px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover,
+form input[type="submit"]:hover {
+    background-color: #3a4a61;
+    transform: translateY(-5px);
+}
+
+/* Form Styles */
+form {
+    margin-top: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    animation: fadeIn 2s ease-out;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="tel"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="date"]:focus {
+    border-color: #1e2a38;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(30, 42, 56, 0.8);
+    color: rgb(166, 227, 242);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Bus Service Section */
+.bus-service {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.bus-type {
+    background-color: rgba(227, 114, 114, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 1s ease-out;
+}
+
+.bus-type:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bus-type img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.bus-type h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.bus-type p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .bus-service {
+        flex-direction: column;
+    }
+
+    .bus-type {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 50px) {
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    form input[type="text"],
+    form input[type="tel"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="date"] {
+        font-size: 1rem;
+    }
+
+    form input[type="submit"] {
+        font-size: 1rem;
+        font-size: large;
+        
+    }
+}
